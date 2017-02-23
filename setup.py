@@ -26,7 +26,7 @@ setup(
     include_package_data=True,
     install_requires=[],
     license='Apache License, Version 2.0',
-    description=('An interface for getting settings from a variety'
+    description=('An interface for getting settings from a variety '
                  'of configuration libraries.'),
     long_description=README,
     url=url,
