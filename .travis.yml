@@ -1,13 +1,25 @@
 sudo: false
 language: python
 python:
-  - "2.7"
-  - "3.4"
-  - "3.5"
+- '2.7'
+- '3.4'
+- '3.5'
 before_script:
-    - pip install Django
-    - pip install pep8
+- pip install Django
+- pip install pep8
 script:
-    - pep8 commonconf
-    - DJANGO_SETTINGS_MODULE=travis_ci.settings python tests.py
-
+- pep8 commonconf
+- DJANGO_SETTINGS_MODULE=travis_ci.settings python tests.py
+before_deploy:
+- find commonconf/ -name \*.pyc -exec rm {} \;
+- echo $TRAVIS_TAG > commonconf/VERSION
+deploy:
+  provider: pypi
+  server: https://pypi.python.org/pypi
+  user: uw-it-aca
+  skip_cleanup: true
+  password:
+    secure: HxvCtoeu3YEhqFv+gT98SkQS9z8DaXKDu+KBXszt9h/7Roe7n+9nV6o0HK8TjBE/W5VtJr7ieR95SpxT5eDicdp4cC3XnZAUcEZvnG158xTxP6IFx0Pmzaw1OGxMjT+8OlimLnTtACjleYsk5ETUeZCFEBO6ksDWHpGBuNpczXDYmOMYtOh9s92HD/n+Q0MNpdXoymuvNhorzGJCJyT1JmzofPi9NTolI12DKWntEY6Qg1uiFItYoX9SWddLliMUWJT3suI0Y7gAvI/aTgC5yxeqIngQwCestxkB3Ds2Ufg0sod+PrHIoJKnYnj0rBVFAG2NPiKSLO0Ng2JMnL5bn8f2YwGrW3UIl667yIHrr5kESzSuUZDlImO2t+5PL7qtZRv3XmBQnzQff2ncxaFnAsauZZCyHFiIIk8r9fLudnDPZRUgXg0OT9yBOnMgpuolll3cz3Vdes767lfm2dr80hCWHxlJaCCn8hiIjbCPMetlxyUkp7rAUYNt1fB5d4/mEQRJHrUjT7UUIOnmg5pXE/7eFbc9nufqrDb+2iW/0oeRyT6gU/LALfhKV4e90tgvB7QCl82XLOoHh40lJ98w/FEd9Sf9RdwUATKSjTCz3ARjvESRnwnBdwtQClGfnrCX94v3UiBqEhCoNX7laNKiVLAHaukeeAKMHby11iJzF/o=
+  on:
+    tags: true
+    condition: $TRAVIS_PYTHON_VERSION = "2.7"
