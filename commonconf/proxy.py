@@ -11,6 +11,15 @@ class ConfProxy(object):
 
     def get_backend(self):
         if not ConfProxy.backend:
-            raise NotConfigured("Must configure a commonconf backend")
+            try:
+                guess_backend()
+            except:
+                raise NotConfigured("Must configure a commonconf backend")
 
         return ConfProxy.backend
+
+
+def guess_backend():
+    from django.conf import settings
+    from commonconf.backends import use_django_backend
+    use_django_backend()
