@@ -47,3 +47,16 @@ class TestOverrides(unittest.TestCase):
 
         with self.assertRaises(Exception):
             settings.OTHER
+
+
+@override_settings(DEBUG="class level", OTHER="More")
+class TestClassOverride(unittest.TestCase):
+    def test_it(self):
+        self.assertEquals(settings.DEBUG, "class level")
+        self.assertEquals(settings.OTHER, "More")
+
+    def test_bad_superclass(self):
+        with self.assertRaises(Exception):
+            @override_settings()
+            class BadWrap(object):
+                pass
