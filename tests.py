@@ -2,10 +2,11 @@ import sys
 import unittest
 from commonconf.test.django import TestDjangoBackend
 from commonconf.test.configparser import TestConfigParserBackend
+from commonconf.test.override import TestOverrides
 
 suite = unittest.TestSuite()
 
-for case in (TestDjangoBackend, TestConfigParserBackend):
+for case in (TestDjangoBackend, TestConfigParserBackend, TestOverrides):
     tests = unittest.TestLoader().loadTestsFromTestCase(case)
     suite.addTests(tests)
 value = unittest.TextTestRunner(verbosity=1).run(suite)
