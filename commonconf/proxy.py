@@ -3,8 +3,20 @@ from commonconf.exceptions import NotConfigured
 
 class ConfProxy(object):
     backend = None
+    overrides = {}
+
+    @classmethod
+    def set_overrides(cls, overrides):
+        ConfProxy.overrides = overrides
+
+    @classmethod
+    def clear_overrides(cls):
+        ConfProxy.overrides = {}
 
     def __getattr__(self, key):
+        if key in ConfProxy.overrides:
+            return ConfProxy.overrides[key]
+
         backend = self.get_backend()
 
         return backend.get(key)
