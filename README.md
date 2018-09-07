@@ -1,3 +1,7 @@
+[![Build Status](https://api.travis-ci.org/uw-it-aca/commonconf.svg?branch=master)](https://travis-ci.org/uw-it-aca/commonconf)
+[![Coverage Status](https://coveralls.io/repos/uw-it-aca/commonconf/badge.png?branch=master)](https://coveralls.io/r/uw-it-aca/commonconf?branch=master)
+
+
 # commonconf
 
 Configuring an application's settings can be tricky.  We tend to use Django for our apps, so we use Django settings.  But - then if we write a helpful library, and we use Django settings, the library is only useful for Django developers.  On the other hand, if we use another settings library (and there are many!), we need to have two types of configuration in our apps.

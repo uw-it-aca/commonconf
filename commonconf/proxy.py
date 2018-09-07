@@ -25,7 +25,7 @@ class ConfProxy(object):
         if not ConfProxy.backend:
             try:
                 guess_backend()
-            except:
+            except Exception:
                 raise NotConfigured("Must configure a commonconf backend")
 
         return ConfProxy.backend
