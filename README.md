@@ -1,7 +1,7 @@
 # commonconf
 
 [![Build Status](https://api.travis-ci.org/uw-it-aca/commonconf.svg?branch=master)](https://travis-ci.org/uw-it-aca/commonconf)
-[![Coverage Status](https://coveralls.io/repos/uw-it-aca/commonconf/badge.png?branch=master)](https://coveralls.io/r/uw-it-aca/commonconf?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/uw-it-aca/commonconf/badge.svg?branch=master)](https://coveralls.io/github/uw-it-aca/commonconf?branch=master)
 [![PyPi Version](https://img.shields.io/pypi/v/commonconf.svg)](https://pypi.python.org/pypi/commonconf)
 ![Python versions](https://img.shields.io/pypi/pyversions/commonconf.svg)
 
