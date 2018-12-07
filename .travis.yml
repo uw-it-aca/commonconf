@@ -10,7 +10,7 @@ before_script:
 - pip install coveralls
 script:
 - pycodestyle commonconf/
-- DJANGO_SETTINGS_MODULE=travis_ci.settings coverage run commonconf/test.py -v
+- DJANGO_SETTINGS_MODULE=travis_ci.settings coverage run --source=commonconf commonconf/test.py -v
 after_script:
 - coveralls
 before_deploy:
