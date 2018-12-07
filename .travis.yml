@@ -5,11 +5,12 @@ python:
 before_script:
 - pip install Django
 - pip install pycodestyle
+- pip install nose2
 - pip install coverage
 - pip install coveralls
 script:
 - pycodestyle commonconf/
-- DJANGO_SETTINGS_MODULE=travis_ci.settings coverage run tests.py -v
+- DJANGO_SETTINGS_MODULE=travis_ci.settings coverage run commonconf/test.py -v
 after_script:
 - coveralls
 before_deploy:
