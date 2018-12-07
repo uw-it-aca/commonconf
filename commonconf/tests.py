@@ -18,5 +18,3 @@ if len(value.errors) or len(value.failures):
     sys.exit(1)
 
 sys.exit(0)
-
-
