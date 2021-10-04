@@ -28,3 +28,10 @@ class TestConfigParserBackend(unittest.TestCase):
 
         value = getattr(settings, "MISSING_KEY_FOR_TESTING", "OK")
         self.assertEquals(value, "OK")
+
+    def test_environment_value(self):
+        use_configparser_backend(config_path, "Section1")
+
+        os.environ["MISSING_KEY_FROM_SETTINGS"] = "MISSING_KEY_VALUE"
+        self.assertEquals(settings.MISSING_KEY_FROM_SETTINGS,
+                          "MISSING_KEY_VALUE")
