@@ -33,4 +33,3 @@ With the above in your script, your code can access settings the Django way:
     bar = getattr(settings, "MISSING_KEY", "DEFAULT VALUE")
 
 Pull requests welcome.
-
