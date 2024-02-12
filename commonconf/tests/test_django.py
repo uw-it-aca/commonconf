@@ -33,4 +33,4 @@ class TestDjangoBackend(unittest.TestCase):
         use_django_backend()
 
         value = getattr(settings, "MISSING_KEY_FOR_TESTING", "OK")
-        self.assertEquals(value, "OK")
+        self.assertEqual(value, "OK")
