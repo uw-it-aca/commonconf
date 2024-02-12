@@ -3,7 +3,7 @@
 [![Build Status](https://github.com/uw-it-aca/commonconf/workflows/tests/badge.svg?branch=main)](https://github.com/uw-it-aca/commonconf/actions)
 [![Coverage Status](https://coveralls.io/repos/github/uw-it-aca/commonconf/badge.svg?branch=main)](https://coveralls.io/github/uw-it-aca/commonconf?branch=main)
 [![PyPi Version](https://img.shields.io/pypi/v/commonconf.svg)](https://pypi.python.org/pypi/commonconf)
-![Python versions](https://img.shields.io/pypi/pyversions/commonconf.svg)
+![Python versions](https://img.shields.io/badge/python-3.10-blue.svg)
 
 Configuring an application's settings can be tricky.  We tend to use Django for our apps, so we use Django settings.  But if we write a helpful library, and we use Django settings, the library is only useful for Django developers.  On the other hand, if we use another settings library (and there are many!), we need to have two types of configuration in our apps.
 
