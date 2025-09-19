@@ -1,6 +1,6 @@
 # commonconf
 
-[![Build Status](https://github.com/uw-it-aca/commonconf/workflows/tests/badge.svg?branch=main)](https://github.com/uw-it-aca/commonconf/actions)
+[![Build Status](https://github.com/uw-it-aca/commonconf/workflows/tests/badge.svg)](https://github.com/uw-it-aca/commonconf/actions)
 [![Coverage Status](https://coveralls.io/repos/github/uw-it-aca/commonconf/badge.svg?branch=main)](https://coveralls.io/github/uw-it-aca/commonconf?branch=main)
 [![PyPi Version](https://img.shields.io/pypi/v/commonconf.svg)](https://pypi.python.org/pypi/commonconf)
 ![Python versions](https://img.shields.io/badge/python-3.12-blue.svg)
