@@ -24,8 +24,8 @@ class TestOverrides(unittest.TestCase):
             return settings.DEBUG, settings.OTHER
 
         debug, other = get_overridden()
-        self.assertEquals(debug, "What!")
-        self.assertEquals(other, "Also")
+        self.assertEqual(debug, "What!")
+        self.assertEqual(other, "Also")
 
         self.assertTrue(settings.DEBUG)
 
@@ -43,8 +43,8 @@ class TestOverrides(unittest.TestCase):
             debug = settings.DEBUG
             other = settings.OTHER
 
-        self.assertEquals(debug, "What!")
-        self.assertEquals(other, "Also")
+        self.assertEqual(debug, "What!")
+        self.assertEqual(other, "Also")
 
         self.assertTrue(settings.DEBUG)
 
@@ -55,8 +55,8 @@ class TestOverrides(unittest.TestCase):
 @override_settings(DEBUG="class level", OTHER="More")
 class TestClassOverride(unittest.TestCase):
     def test_it(self):
-        self.assertEquals(settings.DEBUG, "class level")
-        self.assertEquals(settings.OTHER, "More")
+        self.assertEqual(settings.DEBUG, "class level")
+        self.assertEqual(settings.OTHER, "More")
 
     def test_bad_superclass(self):
         with self.assertRaises(Exception):

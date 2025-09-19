@@ -27,4 +27,4 @@ class TestConfigParserBackend(unittest.TestCase):
         use_configparser_backend(config_path, "Section1")
 
         value = getattr(settings, "MISSING_KEY_FOR_TESTING", "OK")
-        self.assertEquals(value, "OK")
+        self.assertEqual(value, "OK")
